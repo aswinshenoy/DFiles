@@ -1,0 +1,11 @@
+  nginx:
+    container_name: nginx
+    image: nginx
+    build:
+      context: nginx  # location with reference to docker-compose.yaml, expects to see Dockerfile inside a folder called nginx
+      dockerfile: Dockerfile  
+    ports:
+      - "80:80"  # 80 port!!!!
+    depends_on: 
+      - framework # for linking to work
+      - webapp
